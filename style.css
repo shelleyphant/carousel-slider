@@ -35,8 +35,14 @@ li {
 }
 
 .next {
-
+	
+}
+.next:after {
+	content: '\003e';
 }
 .back {
 
+}
+.back:after {
+	content: '\003c';
 }
