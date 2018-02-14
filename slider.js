@@ -12,7 +12,6 @@ $(document).ready(function(){ //Don't run scripts until the document has loaded
 		$(slides.get(counter)).addClass('current');
 
 		if(number === 1){
-			console.log('one');
 			$(slides.get(counter)).addClass('current');
 			$('.carousel > .slide').css({'display': 'none'});
 		}
