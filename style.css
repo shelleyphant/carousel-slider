@@ -36,6 +36,8 @@ img {
 	object-fit: cover; /*Maintain the image aspect ratio*/
 }
 
+/*-- BUTTON SETUP --*/
+
 .slide { /*Styles used by both buttons*/
 	width: 50px;
 	height: 50px;
