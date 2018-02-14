@@ -6,6 +6,11 @@ $(document).ready(function(){ //Don't run scripts until the document has loaded
 	var number = slides.length;
 	var counter = 0;
 
+	//Sliding Function
+	function slide(){
+		$()
+	}
+
 	//Button Functions
 	$('.next').on('click', function(){
 		console.log('next slide please');

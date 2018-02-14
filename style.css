@@ -67,3 +67,14 @@ img {
 }
 
 /*-- SLIDING SETUP --*/
+.current {
+	left: 0;
+	z-index: 2;
+	position: relative;
+}
+.prev {
+	left: 100%;
+}
+.forth {
+	left: -100%;
+}
