@@ -5,10 +5,31 @@ $(document).ready(function(){ //Don't run scripts until the document has loaded
 	var current = slides[0];
 	var number = slides.length;
 	var counter = 0;
+	var init = true;
 
 	//Sliding Function
 	function slide(direction){
 		$(slides.get(counter)).addClass('current');
+
+		if(number === 1){
+			console.log('one');
+			$(slides.get(counter)).addClass('current');
+			$('.carousel > .slide').css({'display': 'none'});
+		}
+
+		if (number === 2){
+			if (init) {
+				$(slides.get(counter)).addClass('current');
+				$(slides.get(counter + 1)).addClass('forth');
+				$('.current').clone().appendTo('.carousel ol').removeClass('current').addClass('prev');
+				$('.forth').clone().appendTo('.carousel ol').removeClass('forth').addClass('prev');
+
+				slides = $('.carousel ol li');
+				number = slides.length;
+				current = slides[0];
+				init = false;
+			}
+		}
 
 		slides.removeClass('current prev forth');
 		counter = counter + direction;
@@ -31,10 +52,16 @@ $(document).ready(function(){ //Don't run scripts until the document has loaded
 	}
 
 	//Button Functions
-	$('.next').on('click', function(){
+	$('.back').on('click', function(){
+		$('.current').css({'z-index': '2'});
+		$('.forth').css({'z-index': '1'});
+		$('.prev').css({'z-index': '0'});
 		slide(1);
 	});
-	$('.back').on('click', function(){
+	$('.next').on('click', function(){
+		$('.current').css({'z-index': '2'});
+		$('.prev').css({'z-index': '1'});
+		$('.forth').css({'z-index': '0'});
 		slide(-1);
 	});
 
