@@ -18,11 +18,9 @@ $(document).ready(function(){ //Don't run scripts until the document has loaded
 	//Button Functions
 	$('.next').on('click', function(){
 		slide(1);
-		console.log('next slide please');
 	});
 	$('.back').on('click', function(){
 		slide(-1);
-		console.log('previous slide please');
 	});
 
 	slide(0);
